@@ -1,13 +1,27 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
     <router-view/>
   </div>
 </template>
-
+<script>
+export default {
+  created() {
+    this.logWinSize(window.innerWidth)
+    window.addEventListener('resize', this.resizeHandler)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.resizeHandler)
+  },
+  methods: {
+    logWinSize(size) {
+      this.$store.commit('setWinSize', size)
+    },
+    resizeHandler(e) {
+      this.logWinSize(window.innerWidth)
+    }
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
