@@ -19,5 +19,6 @@ module.exports = defineConfig({
         // use: ['babel-loader', 'vue-svg-loader']
       }]
     }
-  }
+  },
+  publicPath: "/"
 })
