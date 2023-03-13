@@ -20,5 +20,5 @@ module.exports = defineConfig({
       }]
     }
   },
-  publicPath: "/"
+  publicPath: "/dist"
 })
