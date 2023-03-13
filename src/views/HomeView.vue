@@ -10,6 +10,14 @@ export default {
   name: 'HomeView',
   components: {
     Slider
+  },
+  created() {
+    this.test()
+  },
+  methods: {
+    async test() {
+      
+    }
   }
 }
 </script>
